@@ -15,10 +15,10 @@ npm install char-regex
 ```js
 const charRegex = require("char-regex");
 
-"❤️👊🏽".split(/./g)
+"❤️👊🏽".match(/./)
 //=> ["", "", "", "", "", "", ""]
 
-"❤️👊🏽".split(charRegex())
+"❤️👊🏽".match(charRegex())
 //=> ["❤️", "👊🏽"]
 ```
 
