@@ -1,6 +1,6 @@
 {
 	"name": "char-regex",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "A regex to match any full character, considering weird character ranges.",
 	"repository": "https://github.com/Richienb/char-regex.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
