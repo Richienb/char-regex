@@ -1,14 +1,13 @@
 /**
- * My awesome module.
- * @param input Lorem ipsum.
- * @param postfix Lorem ipsum.
+ * A regex to match any full character, considering weird character ranges.
  * @example
  * ```
- * const theModule = require("the-module");
- * theModule("unicorns");
- * //=> 'unicorns & rainbows'
+ * const charRegex = require("char-regex");
+ *
+ * "❤️👊🏽".split(charRegex())
+ * //=> ["❤️", "👊🏽"]
  * ```
 */
-declare function theModule(input: string, { postfix }: { postfix?: string }): string;
+declare function charRegex(): RegExp;
 
-export = theModule;
+export = charRegex;

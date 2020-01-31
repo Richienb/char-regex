@@ -1,41 +1,27 @@
-# The module [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/the-module/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/the-module)
+# Char Regex [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/char-regex/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/char-regex)
 
-My awesome module.
+A regex to match any full character, considering weird character ranges. Extracted from https://github.com/lodash/lodash/blob/master/.internal/unicodeSize.js.
 
-[![NPM Badge](https://nodei.co/npm/the-module.png)](https://npmjs.com/package/the-module)
+[![NPM Badge](https://nodei.co/npm/char-regex.png)](https://npmjs.com/package/char-regex)
 
 ## Install
 
 ```sh
-npm install the-module
+npm install char-regex
 ```
 
 ## Usage
 
 ```js
-const theModule = require("the-module");
+const charRegex = require("char-regex");
 
-theModule("unicorns");
-//=> 'unicorns & rainbows'
+"❤️👊🏽".split(/./g)
+//=> ["", "", "", "", "", "", ""]
+
+"❤️👊🏽".split(charRegex())
+//=> ["❤️", "👊🏽"]
 ```
 
 ## API
 
-### theModule(input, options?)
-
-#### input
-
-Type: `string`
-
-Lorem ipsum.
-
-#### options
-
-Type: `object`
-
-##### postfix
-
-Type: `string`\
-Default: `rainbows`
-
-Lorem ipsum.
+### charRegex()

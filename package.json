@@ -1,8 +1,8 @@
 {
-	"name": "the-module",
+	"name": "char-regex",
 	"version": "0.0.0",
-	"description": "My awesome module.",
-	"repository": "https://github.com/Richienb/the-module.git",
+	"description": "A regex to match any full character, considering weird character ranges.",
+	"repository": "https://github.com/Richienb/char-regex.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
 	"license": "MIT",
 	"main": "index.js",
@@ -17,7 +17,13 @@
 		"lint": "xo",
 		"test": "yarn lint && ava"
 	},
-	"keywords": [],
+	"keywords": [
+		"character",
+		"regex",
+		"match",
+		"split",
+		"length"
+	],
 	"dependencies": {},
 	"devDependencies": {
 		"ava": "^3.0.0",
