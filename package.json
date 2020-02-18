@@ -26,8 +26,13 @@
 	],
 	"dependencies": {},
 	"devDependencies": {
+		"array-uniq": "^2.1.0",
 		"ava": "^3.0.0",
+		"emoji.json": "^12.1.1",
 		"eslint-config-richienb": "^0.3.0",
+		"lodash": "^4.17.15",
+		"unicode": "^12.1.0",
+		"unicode-chars": "^1.0.1",
 		"xo": "^0.25.3"
 	},
 	"resolutions": {

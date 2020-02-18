@@ -4,10 +4,10 @@
  * ```
  * const charRegex = require("char-regex");
  *
- * "❤️👊🏽".split(charRegex())
+ * "❤️👊🏽".match(charRegex());
  * //=> ["❤️", "👊🏽"]
  * ```
 */
-declare function charRegex(): RegExp;
+declare function charRegex(): RegExp
 
-export = charRegex;
+export = charRegex
