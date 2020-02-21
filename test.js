@@ -1,6 +1,5 @@
 const test = require("ava")
-const arrayUniq = require("array-uniq")
-const unicodeChars = arrayUniq([...require("unicode-chars")(), ...require("emoji.json").map(({ char }) => char)])
+const allChars = require("all-chars")()
 const charRegex = require(".")()
 
 // See: https://mathiasbynens.be/notes/javascript-unicode#poo-test
@@ -10,7 +9,7 @@ test("The Pile of Poo Test™", (t) => {
 	])
 })
 
-unicodeChars.forEach((character) => {
+allChars.forEach((character) => {
 	test(`Test "${character}"`, (t) => {
 		t.deepEqual(character.match(charRegex), [character])
 	})
