@@ -32,8 +32,8 @@ module.exports = () => {
 	const optJoin = `(?:${zwj}(?:${[nonAstral, regional, surrogatePair].join("|")})${optVar + optModifier})*`
 	const seq = optVar + optModifier + optJoin
 	const nonAstralCombo = `${nonAstral}${combo}?`
-	const symbol = `(?:${[nonAstralCombo, combo, regional, surrogatePair, astral, family].join("|")})`
+	const symbol = `(?:${[blackFlag, nonAstralCombo, combo, regional, surrogatePair, astral, family].join("|")})`
 
 	// Used to match [String symbols](https://mathiasbynens.be/notes/javascript-unicode).
-	return new RegExp(`${blackFlag}|${fitz}(?=${fitz})|${symbol + seq}`, "g")
+	return new RegExp(`${fitz}(?=${fitz})|${symbol + seq}`, "g")
 }
