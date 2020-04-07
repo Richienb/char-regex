@@ -21,13 +21,13 @@ module.exports = () => {
 	const nonAstral = `[^${astralRange}]`
 	const regional = "(?:\\ud83c[\\udde6-\\uddff]){2}"
 	const surrogatePair = "[\\ud800-\\udbff][\\udc00-\\udfff]"
-	const zwj = "\\u200d"
+	const zeroWidthJoiner = "\\u200d"
 	const blackFlag = "(?:\\ud83c\\udff4\\udb40\\udc67\\udb40\\udc62\\udb40(?:\\udc65|\\udc73|\\udc77)\\udb40(?:\\udc6e|\\udc63|\\udc6c)\\udb40(?:\\udc67|\\udc74|\\udc73)\\udb40\\udc7f)"
 
 	// Used to compose unicode regexes.
 	const optModifier = `${modifier}?`
 	const optVar = `[${varRange}]?`
-	const optJoin = `(?:${zwj}(?:${[nonAstral, regional, surrogatePair].join("|")})${optVar + optModifier})*`
+	const optJoin = `(?:${zeroWidthJoiner}(?:${[nonAstral, regional, surrogatePair].join("|")})${optVar + optModifier})*`
 	const seq = optVar + optModifier + optJoin
 	const nonAstralCombo = `${nonAstral}${combo}?`
 	const symbol = `(?:${[blackFlag, nonAstralCombo, combo, regional, surrogatePair, astral].join("|")})`
