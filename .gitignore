@@ -1,3 +1,8 @@
+# Lockfiles
+
+package-lock.json
+yarn.lock
+
 # Visual Studio Code
 
 .vscode/*
@@ -158,15 +163,18 @@ typings/
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 
-# next.js build output
+# Next.js build output
 .next
 
-# nuxt.js build output
+# Nuxt.js build / generate output
 .nuxt
+dist
 
-# gatsby files
+# Gatsby files
 .cache/
-public
+# Comment in the public line in if your project uses Gatsby and not Next.js
+# https://nextjs.org/blog/next-9-1#public-directory-support
+# public
 
 # vuepress build output
 .vuepress/dist
@@ -182,3 +190,6 @@ public
 
 # TernJS port file
 .tern-port
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test

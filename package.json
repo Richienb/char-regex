@@ -27,14 +27,14 @@
 	"dependencies": {},
 	"devDependencies": {
 		"all-chars": "^1.0.0",
-		"ava": "^3.0.0",
-		"eslint-config-richienb": "^0.3.0",
-		"xo": "^0.25.3"
+		"ava": "^3.6.0",
+		"eslint-config-richienb": "^0.4.2",
+		"xo": "^0.28.3"
 	},
 	"resolutions": {
 		"eslint": "^6.8.0"
 	},
 	"xo": {
-		"extends": "richienb/node"
+		"extends": "richienb"
 	}
 }
