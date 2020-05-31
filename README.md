@@ -1,4 +1,4 @@
-# Char Regex [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/char-regex/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/char-regex)
+# char-regex [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/char-regex/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/char-regex)
 
 A regex to match any full character, considering weird character ranges. Tested on every single emoji and unicode character. Based on the Lodash implementation.
 
