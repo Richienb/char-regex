@@ -25,3 +25,7 @@ const charRegex = require("char-regex");
 ## API
 
 ### charRegex()
+
+## Related
+
+- [string-length](https://github.com/sindresorhus/string-length) - Get the real length of a string
