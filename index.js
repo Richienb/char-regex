@@ -1,8 +1,6 @@
-"use strict"
+// Based on https://github.com/lodash/lodash/blob/6018350ac10d5ce6a5b7db625140b82aeab804df/.internal/unicodeSize.js
 
-// Based on: https://github.com/lodash/lodash/blob/6018350ac10d5ce6a5b7db625140b82aeab804df/.internal/unicodeSize.js
-
-module.exports = () => {
+export default function charRegex() {
 	// Used to compose unicode character classes.
 	const astralRange = "\\ud800-\\udfff"
 	const comboMarksRange = "\\u0300-\\u036f"

@@ -1,6 +1,9 @@
-const test = require("ava")
-const allChars = require("all-chars")()
-const charRegex = require(".")()
+import test from "ava"
+import createAllChars from "all-chars"
+import createCharRegex from "./index.js"
+
+const allChars = createAllChars()
+const charRegex = createCharRegex()
 
 // See: https://mathiasbynens.be/notes/javascript-unicode#poo-test
 test("The Pile of Poo Test™", t => {
@@ -9,8 +12,8 @@ test("The Pile of Poo Test™", t => {
 	])
 })
 
-allChars.forEach(character => {
+for (const character of allChars) {
 	test(`Test "${character}"`, t => {
 		t.deepEqual(character.match(charRegex), [character])
 	})
-})
+}
