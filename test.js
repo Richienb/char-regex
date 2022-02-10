@@ -1,6 +1,6 @@
 import test from "ava"
 import createAllChars from "all-chars"
-import createAllTeluguChars from "./telugu-alphabet.js"
+import createAllTeluguChars from "./fixture/telugu-alphabet.js"
 import createCharRegex from "./index.js"
 
 const allChars = createAllChars()
