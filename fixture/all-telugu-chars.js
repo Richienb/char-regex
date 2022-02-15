@@ -6,6 +6,7 @@ export default function allTeluguChars() {
 	const rareConsonants = ["ౘ", "ౙ", "ౚ"]
 	const modifiers = ["్", "ఁ", "ం", "ః", "ౕ", "ౖ"]
 	const numerals = ["౦", "౧", "౨", "౩", "౪", "౫", "౬", "౭", "౮", "౯", "౸", "౹", "౺", "౻", "౼", "౽", "౾"]
+	const virama = "్"
 
 	const doubleCombos = [] // Telugu symbols built out of two code points
 	const tripleCombos = [] // Telugu symbols built out of three code points
@@ -22,9 +23,9 @@ export default function allTeluguChars() {
 			doubleCombos.push(String.fromCodePoint(consonant.codePointAt(0), modifier.codePointAt(0)))
 		}
 
-		// Consonant + consonant (separated by ్  (= \u0c4d = 3149))
+		// Consonant + consonant (separated by ్)
 		for (const consonant2 of consonants) {
-			tripleCombos.push(String.fromCodePoint(consonant.codePointAt(0), 3149, consonant2.codePointAt(0)))
+			tripleCombos.push(String.fromCodePoint(consonant.codePointAt(0), virama.codePointAt(0), consonant2.codePointAt(0)))
 		}
 	}
 
