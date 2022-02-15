@@ -1,4 +1,4 @@
-import { expectType } from "tsd"
-import charRegex from "./index.js"
+import {expectType} from 'tsd';
+import charRegex from './index.js';
 
-expectType<RegExp>(charRegex())
+expectType<RegExp>(charRegex());

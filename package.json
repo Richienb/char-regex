@@ -1,11 +1,14 @@
 {
 	"name": "char-regex",
 	"version": "2.0.0",
-	"type": "module",
 	"description": "A regex to match any full character, considering weird character ranges.",
-	"repository": "https://github.com/Richienb/char-regex.git",
-	"author": "Richie Bendall <richiebendall@gmail.com>",
+	"repository": "Richienb/char-regex",
+	"author": {
+		"name": "Richie Bendall",
+		"email": "richiebendall@gmail.com"
+	},
 	"license": "MIT",
+	"type": "module",
 	"exports": "./index.js",
 	"files": [
 		"index.js",
@@ -15,7 +18,6 @@
 		"node": ">=12.20"
 	},
 	"scripts": {
-		"lint": "xo",
 		"test": "xo && ava && tsd"
 	},
 	"keywords": [
@@ -28,12 +30,8 @@
 	"dependencies": {},
 	"devDependencies": {
 		"all-chars": "^1.0.0",
-		"ava": "^3.15.0",
-		"eslint-config-richienb": "^0.6.2",
-		"tsd": "^0.17.0",
-		"xo": "^0.40.2"
-	},
-	"xo": {
-		"extends": "richienb"
+		"ava": "^4.0.1",
+		"tsd": "^0.19.1",
+		"xo": "^0.48.0"
 	}
 }

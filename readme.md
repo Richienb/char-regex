@@ -2,8 +2,6 @@
 
 A regex to match any full character, considering weird character ranges. Tested on every single emoji and unicode character. Based on the Lodash implementation.
 
-[![NPM Badge](https://nodei.co/npm/char-regex.png)](https://npmjs.com/package/char-regex)
-
 ## Install
 
 ```sh
@@ -13,18 +11,14 @@ npm install char-regex
 ## Usage
 
 ```js
-import charRegex from "char-regex"
+import charRegex from 'char-regex';
 
-"❤️👊🏽".match(/./)
-//=> ["", "", "", "", "", "", ""]
+'❤️👊🏽'.match(/./);
+//=> ['', '', '', '', '', '', '']
 
-"❤️👊🏽".match(charRegex())
-//=> ["❤️", "👊🏽"]
+'❤️👊🏽'.match(charRegex());
+//=> ['❤️', '👊🏽']
 ```
-
-## API
-
-### charRegex()
 
 ## Related
 

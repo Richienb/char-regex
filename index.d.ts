@@ -3,10 +3,13 @@
 
 @example
 ```
-import charRegex from "char-regex"
+import charRegex from 'char-regex';
 
-"❤️👊🏽".match(charRegex())
-//=> ["❤️", "👊🏽"]
+'❤️👊🏽'.match(/./);
+//=> ['', '', '', '', '', '', '']
+
+'❤️👊🏽'.match(charRegex());
+//=> ['❤️', '👊🏽']
 ```
 */
-export default function charRegex(): RegExp
+export default function charRegex(): RegExp;
