@@ -11,7 +11,7 @@ export default function charRegex() {
 	const comboRange = comboMarksRange + comboHalfMarksRange + comboSymbolsRange + comboMarksExtendedRange + comboMarksSupplementRange
 	const varRange = "\\ufe0e\\ufe0f"
 
-	// Used to compose Telugu characters as special code point combinations
+	// Used to compose Telugu characters
 	const teluguVowels = "\\u0c05-\\u0c0c\\u0c0e-\\u0c10\\u0c12-\\u0c14\\u0c60-\\u0c61"
 	const teluguVowelsDiacritic = "\\u0c3e-\\u0c44\\u0c46-\\u0c48\\u0c4a-\\u0c4c\\u0c62-\\u0c63"
 	const teluguConsonants = "\\u0c15-\\u0c28\\u0c2a-\\u0c39"
