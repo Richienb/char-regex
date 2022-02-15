@@ -10,7 +10,7 @@ export default function allTeluguChars() {
 	const doubleCombos = [] // Telugu symbols built out of two code points
 	const tripleCombos = [] // Telugu symbols built out of three code points
 
-	// Consonants can be combined with manifold other character modifiers
+	// Consonants can be combined with many other character modifiers
 	for (const consonant of consonants) {
 		// Consonant + vowel
 		for (const vowel of diacriticVowels) {
@@ -30,7 +30,7 @@ export default function allTeluguChars() {
 
 	// Rare consonants like common consonants, but lack the consonant conjuncts
 	for (const consonant of rareConsonants) {
-		// Rare consonant + vowel.
+		// Rare consonant + vowel
 		for (const vowel of diacriticVowels) {
 			doubleCombos.push(String.fromCodePoint(consonant.codePointAt(0), vowel.codePointAt(0)))
 		}
