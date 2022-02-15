@@ -1,7 +1,7 @@
 // Based on https://github.com/lodash/lodash/blob/6018350ac10d5ce6a5b7db625140b82aeab804df/.internal/unicodeSize.js
 
 export default function charRegex() {
-	// Used to compose unicode character classes.
+	// Used to compose unicode character classes
 	const astralRange = "\\ud800-\\udfff"
 	const comboMarksRange = "\\u0300-\\u036f"
 	const comboHalfMarksRange = "\\ufe20-\\ufe2f"
@@ -11,7 +11,7 @@ export default function charRegex() {
 	const comboRange = comboMarksRange + comboHalfMarksRange + comboSymbolsRange + comboMarksExtendedRange + comboMarksSupplementRange
 	const varRange = "\\ufe0e\\ufe0f"
 
-	// Used to compose Telugu characters as special code point combinations.
+	// Used to compose Telugu characters as special code point combinations
 	const teluguVowels = "\\u0c05-\\u0c0c\\u0c0e-\\u0c10\\u0c12-\\u0c14\\u0c60-\\u0c61"
 	const teluguVowelsDiacritic = "\\u0c3e-\\u0c44\\u0c46-\\u0c48\\u0c4a-\\u0c4c\\u0c62-\\u0c63"
 	const teluguConsonants = "\\u0c15-\\u0c28\\u0c2a-\\u0c39"
@@ -23,7 +23,7 @@ export default function charRegex() {
 	const teluguTriple = `[${teluguConsonants}]\\u0c4d[${teluguConsonants}]`
 	const telugu = `(?:${teluguTriple}|${teluguDouble}|${teluguSingle})`
 
-	// Used to compose unicode capture groups.
+	// Used to compose unicode capture groups
 	const astral = `[${astralRange}]`
 	const combo = `[${comboRange}]`
 	const fitz = "\\ud83c[\\udffb-\\udfff]"
@@ -34,7 +34,7 @@ export default function charRegex() {
 	const zeroWidthJoiner = "\\u200d"
 	const blackFlag = "(?:\\ud83c\\udff4\\udb40\\udc67\\udb40\\udc62\\udb40(?:\\udc65|\\udc73|\\udc77)\\udb40(?:\\udc6e|\\udc63|\\udc6c)\\udb40(?:\\udc67|\\udc74|\\udc73)\\udb40\\udc7f)"
 
-	// Used to compose unicode regexes.
+	// Used to compose unicode regexes
 	const optModifier = `${modifier}?`
 	const optVar = `[${varRange}]?`
 	const optJoin = `(?:${zeroWidthJoiner}(?:${[nonAstral, regional, surrogatePair].join("|")})${optVar + optModifier})*`
@@ -42,6 +42,6 @@ export default function charRegex() {
 	const nonAstralCombo = `${nonAstral}${combo}?`
 	const symbol = `(?:${[blackFlag, nonAstralCombo, combo, regional, surrogatePair, astral].join("|")})`
 
-	// Used to match [string symbols](https://mathiasbynens.be/notes/javascript-unicode).
+	// Used to match [string symbols](https://mathiasbynens.be/notes/javascript-unicode)
 	return new RegExp(`${fitz}(?=${fitz})|${telugu}|${symbol + seq}`, "g")
 }
