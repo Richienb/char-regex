@@ -19,7 +19,7 @@ export default function charRegex() {
 	const teluguModifiers = '\\u0c01-\\u0c03\\u0c4d\\u0c55\\u0c56';
 	const teluguNumerals = '\\u0c66-\\u0c6f\\u0c78-\\u0c7e';
 	const teluguSingle = `[${teluguVowels}(?:${teluguConsonants}(?!\\u0c4d))${teluguNumerals}${teluguConsonantsRare}]`;
-	const teluguDouble = `[${teluguConsonants}${teluguConsonantsRare}][${teluguVowelsDiacritic}]|[${teluguConsonants}${teluguConsonantsRare}][${teluguModifiers}`;
+	const teluguDouble = `[${teluguConsonants}${teluguConsonantsRare}][${teluguVowelsDiacritic}]|[${teluguConsonants}${teluguConsonantsRare}][${teluguModifiers}]`;
 	const teluguTriple = `[${teluguConsonants}]\\u0c4d[${teluguConsonants}]`;
 	const telugu = `(?:${teluguTriple}|${teluguDouble}|${teluguSingle})`;
 
