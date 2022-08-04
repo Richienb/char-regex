@@ -1,10 +1,11 @@
 import test from 'ava';
 import createAllChars from 'all-chars';
-import createAllTeluguChars from './fixture/all-telugu-chars.js';
+import {createAllTeluguChars, createTeluguCharPairs} from './fixture/all-telugu-chars.js';
 import createCharRegex from './index.js';
 
 const allChars = createAllChars();
 const allTeluguChars = createAllTeluguChars();
+const sampleTeluguCharPairs = createTeluguCharPairs();
 const charRegex = createCharRegex();
 
 function getCodePoints(string) {
@@ -28,6 +29,13 @@ test('The Pile of Poo Test™', t => {
 for (const character of allTeluguChars) {
 	test(`Test Telugu "${character}" (${getCodePoints(character)})`, t => {
 		t.deepEqual(character.match(charRegex), [character]);
+	});
+}
+
+// Test for Telugu language generating certain char pairs
+for (const characters of sampleTeluguCharPairs) {
+	test(`Test Telugu char pairs "${characters}" (${getCodePoints(characters)})`, t => {
+		t.true(characters.match(charRegex).length === 2);
 	});
 }
 
