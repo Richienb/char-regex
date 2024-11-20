@@ -42,20 +42,21 @@ for (const consonant of rareConsonants) {
 }
 
 /**
- * Create all single Telugu chars possible.
- * @return {string[]} All single Telugu chars possible.
- */
+Create all single Telugu characters possible.
+
+@return {string[]} All single Telugu chars possible.
+*/
 export function createAllTeluguChars() {
 	return [...independentVowels, ...consonants, ...rareConsonants, ...numerals, ...doubleCombos, ...tripleCombos];
 }
 
 /**
- * Create Telugu char pairs that might occur.
- * In theory it's possible to create failing cases by combining certain
- * single chars, but from what I understand - although I think it's a flaw -
- * that's not something that would happen in written Telugu.
- * @return {string[]} Telugu char pairs.
- */
+Create Telugu character pairs that might occur.
+
+Although it's possible in theory to create missed cases by combining certain single characters, they are hopefully not something that would happen in written Telugu.
+
+@return {string[]} Telugu char pairs.
+*/
 export function createTeluguCharPairs() {
 	const sampleCharsOneCodePoint = [...independentVowels, ...consonants, ...rareConsonants, ...numerals];
 	const sampleCharsTwoCodePoints = [...doubleCombos];
