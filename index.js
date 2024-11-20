@@ -9,7 +9,7 @@ export default function charRegex() {
 	const comboMarksExtendedRange = '\\u1ab0-\\u1aff';
 	const comboMarksSupplementRange = '\\u1dc0-\\u1dff';
 	const comboRange = comboMarksRange + comboHalfMarksRange + comboSymbolsRange + comboMarksExtendedRange + comboMarksSupplementRange;
-	const varRange = '\\ufe0e\\ufe0f';
+	const variableRange = '\\ufe0e\\ufe0f';
 
 	// Telugu characters
 	const teluguVowels = '\\u0c05-\\u0c0c\\u0c0e-\\u0c10\\u0c12-\\u0c14\\u0c60-\\u0c61';
@@ -18,7 +18,7 @@ export default function charRegex() {
 	const teluguConsonantsRare = '\\u0c58-\\u0c5a';
 	const teluguModifiers = '\\u0c01-\\u0c03\\u0c4d\\u0c55\\u0c56';
 	const teluguNumerals = '\\u0c66-\\u0c6f\\u0c78-\\u0c7e';
-	const teluguSingle = `[${teluguVowels}(?:${teluguConsonants}(?!\\u0c4d))${teluguNumerals}${teluguConsonantsRare}]`;
+	const teluguSingle = `[${teluguVowels}${teluguNumerals}${teluguConsonantsRare}]|[${teluguConsonants}](?!\\u0c4d)`;
 	const teluguDouble = `[${teluguConsonants}${teluguConsonantsRare}][${teluguVowelsDiacritic}]|[${teluguConsonants}${teluguConsonantsRare}][${teluguModifiers}]`;
 	const teluguTriple = `[${teluguConsonants}]\\u0c4d[${teluguConsonants}]`;
 	const telugu = `(?:${teluguTriple}|${teluguDouble}|${teluguSingle})`;
@@ -36,12 +36,12 @@ export default function charRegex() {
 
 	// Unicode regexes
 	const optModifier = `${modifier}?`;
-	const optVar = `[${varRange}]?`;
-	const optJoin = `(?:${zeroWidthJoiner}(?:${[nonAstral, regional, surrogatePair].join('|')})${optVar + optModifier})*`;
-	const seq = optVar + optModifier + optJoin;
+	const optVariable = `[${variableRange}]?`;
+	const optJoin = `(?:${zeroWidthJoiner}(?:${[nonAstral, regional, surrogatePair].join('|')})${optVariable + optModifier})*`;
+	const seq = optVariable + optModifier + optJoin;
 	const nonAstralCombo = `${nonAstral}${combo}?`;
 	const symbol = `(?:${[blackFlag, nonAstralCombo, combo, regional, surrogatePair, astral].join('|')})`;
 
 	// Match string symbols (https://mathiasbynens.be/notes/javascript-unicode)
-	return new RegExp(`${fitz}(?=${fitz})|${telugu}|${symbol + seq}`, 'g');
+	return new RegExp(`${fitz}(?=${fitz})|${telugu}|${symbol + seq}`, 'g'); // eslint-disable-line no-misleading-character-class
 }
